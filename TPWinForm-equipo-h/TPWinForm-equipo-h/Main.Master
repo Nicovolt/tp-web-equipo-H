@@ -21,9 +21,11 @@
                 
             </header>
             <menu class="menu">
-                <li><a href="#" runat="server">Inicio</a></li>
-                <li><i class="fa-solid fa-cart-shopping" runat="server"></i>
-                    <asp:Label ID="tamCarrito" runat="server" Text="0"></asp:Label></li>
+                <li><button type="button" class="btn btn-outline-light">Buscar</button></li>
+               <li><input type="email" name="email" id="email" placeholder="Articulo..."></li>
+                <li><a href="#Defaul.aspx" runat="server">Inicio</a></li>
+                <li><a href="#" runat="server"></a><i class="fa-solid fa-cart-shopping" runat="server"></i><asp:Label ID="Label1" runat="server" Text="0"></asp:Label></li>
+                
             </menu>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
