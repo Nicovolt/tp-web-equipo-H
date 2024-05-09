@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CarritoCompras.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\EquipoH.png" />
@@ -78,6 +79,13 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="Articulo.cs" />
     <Compile Include="ArticuloNegocio.cs" />
+    <Compile Include="CarritoCompras.aspx.cs">
+      <DependentUpon>CarritoCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarritoCompras.aspx.designer.cs">
+      <DependentUpon>CarritoCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Categoria.cs" />
     <Compile Include="CategoriaNegocio.cs" />
     <Compile Include="Default.aspx.cs">
