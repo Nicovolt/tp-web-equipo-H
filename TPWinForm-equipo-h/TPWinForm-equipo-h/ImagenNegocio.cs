@@ -29,7 +29,7 @@ namespace TPWinForm_equipo_h
             }
             finally { connection.Close(); }
         }
-        public Imagen listarUna(int idArticulo)
+        public string listarUna(int idArticulo)
         {
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
@@ -46,6 +46,7 @@ namespace TPWinForm_equipo_h
                 lector = comando.ExecuteReader();
 
                 Imagen imagen = new Imagen();
+                string img = null;
                 while (lector.Read())
                 {
                     imagen.id = lector.GetInt32(0);
@@ -54,8 +55,9 @@ namespace TPWinForm_equipo_h
 
 
                 }
+                img = imagen.url;
                 conexion.Close();
-                return imagen;
+                return img;
             }
             catch (Exception ex)
             {

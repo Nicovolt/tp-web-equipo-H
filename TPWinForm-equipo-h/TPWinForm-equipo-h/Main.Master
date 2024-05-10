@@ -24,7 +24,7 @@
                 <li><button type="button" class="btn btn-outline-light">Buscar</button></li>
                 <li><input type="email" name="email" id="email" placeholder="Articulo..."></li>
                 <li><a href="Default.aspx" runat="server">Inicio</a></li>
-               <<li><a href="CarritoCompras.aspx" runat="server"></a><i class="fa-solid fa-cart-shopping" runat="server"></i><asp:Label ID="Label1" runat="server" Text="0"></asp:Label></li> 
+               <li><a href="CarritoCompras.aspx" runat="server"></a><i class="fa-solid fa-cart-shopping" runat="server"></i><asp:Label ID="Label1" runat="server" Text="0"></asp:Label></li> 
                 
             </menu>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
