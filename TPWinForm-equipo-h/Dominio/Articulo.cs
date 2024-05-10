@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using System.Threading.Tasks;
 
-namespace TPWinForm_equipo_h
+namespace Dominio
 {
     public class Articulo
-    {
+    { 
         public int id { get; set; }
         public string codigo { get; set; }
         public string nombre { get; set; }
@@ -17,5 +19,6 @@ namespace TPWinForm_equipo_h
         public decimal precio { get; set; }
 
         public Imagen imagen { get; set; }
+
     }
 }

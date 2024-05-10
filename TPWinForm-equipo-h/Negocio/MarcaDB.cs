@@ -2,31 +2,39 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using Dominio;
 
-namespace TPWinForm_equipo_h
+namespace Negocio
 {
-    public class CategoriaNegocio
+    internal class MarcaDB
     {
-        public List<Categoria> listar()
+        public List<Marca> listar()
         {
-            List<Categoria> lista = new List<Categoria>();
-            AccesoDatos datos = new AccesoDatos();
-
+            List<Marca> lista = new List<Marca>();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
 
             try
             {
-                datos.setearConsulta("Select Id, Descripcion from CATEGORIAS");
-                datos.ejecutarLectura();
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true ";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "Select Id, Descripcion from MARCAS";
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
 
-                while (datos.Lector.Read())
+                while (lector.Read())
                 {
-                    Categoria categoria = new Categoria();
-                    categoria.Id = (int)datos.Lector["Id"];
-                    categoria.Descripcion = (string)datos.Lector["Descripcion"];
-                    lista.Add(categoria);
+                    Marca marca = new Marca();
+                    marca.Id = (int)lector["Id"];
+                    marca.Descripcion = (string)lector["Descripcion"];
+                    lista.Add(marca);
 
                 }
+                conexion.Close();
                 return lista;
             }
             catch (Exception ex)
@@ -34,14 +42,11 @@ namespace TPWinForm_equipo_h
 
                 throw ex;
             }
-            finally
-            {
-                datos.cerrarConexion();
-            }
         }
-        public string obtener(int id)
+
+        public int obtener(string desc)
         {
-            string categoriaName;
+            int marcaID;
             SqlConnection connection = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader = null;
@@ -50,8 +55,8 @@ namespace TPWinForm_equipo_h
             {
                 connection.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT * FROM [dbo].[CATEGORIAS] WHERE Id = @id";
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.CommandText = "SELECT * FROM [dbo].[MARCAS] WHERE Descripcion = @desc";
+                cmd.Parameters.AddWithValue("@desc", desc);
                 cmd.Connection = connection;
 
                 connection.Open();
@@ -59,19 +64,19 @@ namespace TPWinForm_equipo_h
 
                 if (reader.Read())
                 {
-                    categoriaName = (string)reader["Descripcion"];
+
+                    marcaID = (int)reader["Id"];
                 }
                 else
                 {
-                    categoriaName = "N/A";
+                    marcaID = 0;
                 }
 
-                return categoriaName;
+                return marcaID;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
-                throw;
+                throw ex;
             }
             finally
             {
@@ -84,9 +89,9 @@ namespace TPWinForm_equipo_h
             }
         }
 
-        public int obtener(string desc)
+        public string obtener(int id)
         {
-            int categoriaID;
+            string marcaName;
             SqlConnection connection = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader = null;
@@ -95,8 +100,8 @@ namespace TPWinForm_equipo_h
             {
                 connection.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT * FROM [dbo].[CATEGORIAS] WHERE Descripcion = @desc";
-                cmd.Parameters.AddWithValue("@desc", desc);
+                cmd.CommandText = "SELECT * FROM [dbo].[MARCAS] WHERE Id = @id";
+                cmd.Parameters.AddWithValue("@id", id);
                 cmd.Connection = connection;
 
                 connection.Open();
@@ -104,19 +109,19 @@ namespace TPWinForm_equipo_h
 
                 if (reader.Read())
                 {
-                    categoriaID = (int)reader["Id"];
+
+                    marcaName = (string)reader["Descripcion"];
                 }
                 else
                 {
-                    categoriaID = 0;
+                    marcaName = "N/A";
                 }
 
-                return categoriaID;
+                return marcaName;
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
-                throw;
+                throw ex;
             }
             finally
             {

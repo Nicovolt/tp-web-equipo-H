@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
 
-namespace TPWinForm_equipo_h
+namespace Negocio
 {
-    public class AccesoDatos
+    internal class AccesoDatos
     {
         private SqlConnection conexion;
         private SqlCommand comando;
@@ -25,7 +26,7 @@ namespace TPWinForm_equipo_h
         {
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
-
+           
         }
 
         public void ejecutarLectura()
@@ -42,6 +43,13 @@ namespace TPWinForm_equipo_h
                 throw ex;
             }
 
+        }
+
+        public void CerrarConeccion()
+        {
+            if(lector != null)
+               lector.Close();
+            conexion.Close();
         }
 
         public void ejecutarAccion()

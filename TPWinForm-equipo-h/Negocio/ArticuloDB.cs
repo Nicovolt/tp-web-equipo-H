@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
-
-namespace TPWinForm_equipo_h
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Dominio;
+namespace Negocio
 {
-    public class ArticuloNegocio
+    internal class ArticuloDB
     {
         public void agregarCategoria(Categoria nuevo)
         {
@@ -29,14 +31,14 @@ namespace TPWinForm_equipo_h
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into MARCAS (Descripcion) values ('" + nuevo.Descripcion + "')");
-                datos.setearParametro("@idCategoria", nuevo.Id);
-                datos.ejecutarAccion();
+            datos.setearConsulta("insert into MARCAS (Descripcion) values ('" +  nuevo.Descripcion + "')");
+            datos.setearParametro("@idCategoria", nuevo.Id);
+            datos.ejecutarAccion();
 
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
-                //MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
             finally { datos.cerrarConexion(); }
         }
@@ -62,8 +64,8 @@ namespace TPWinForm_equipo_h
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            MarcaNegocio marcaDB = new MarcaNegocio();
-            CategoriaNegocio categoriaDB = new CategoriaNegocio();
+            MarcaDB marcaDB = new MarcaDB();
+            CategoriaDB categoriaDB = new CategoriaDB();
 
             try
             {
@@ -112,7 +114,7 @@ namespace TPWinForm_equipo_h
             catch (Exception ex)
             {
 
-                //MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -133,7 +135,7 @@ namespace TPWinForm_equipo_h
             catch (Exception ex)
             {
 
-                //MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -160,7 +162,7 @@ namespace TPWinForm_equipo_h
             catch (Exception ex)
             {
 
-                //MessageBox.Show("Error al modificar el artículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al modificar el artículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -176,8 +178,8 @@ namespace TPWinForm_equipo_h
             SqlConnection connection = new SqlConnection();
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader = null;
-            MarcaNegocio marcaDB = new MarcaNegocio();
-            CategoriaNegocio categoriaDB = new CategoriaNegocio();
+            MarcaDB marcaDB = new MarcaDB();
+            CategoriaDB categoriaDB = new CategoriaDB();
 
             try
             {
@@ -231,3 +233,4 @@ namespace TPWinForm_equipo_h
         }
     }
 }
+
