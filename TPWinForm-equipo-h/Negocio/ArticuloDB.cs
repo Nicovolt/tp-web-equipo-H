@@ -4,11 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using Dominio;
 namespace Negocio
 {
-    internal class ArticuloDB
+    public class ArticuloDB
     {
         public void agregarCategoria(Categoria nuevo)
         {
@@ -38,7 +38,8 @@ namespace Negocio
             }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.ToString());
+                throw ex;
+                //MessageBox.Show(ex.ToString());
             }
             finally { datos.cerrarConexion(); }
         }
@@ -113,8 +114,8 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString());
+                throw ex;
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -134,8 +135,8 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString());
+                throw ex;
+                //MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -161,8 +162,8 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("Error al modificar el artículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw ex;
+                //MessageBox.Show("Error al modificar el artículo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             finally
@@ -218,7 +219,7 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             finally
             {

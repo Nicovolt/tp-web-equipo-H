@@ -1,0 +1,6 @@
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\bin\Debug\Dominio.dll
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\obj\Debug\Dominio.dll
+C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Dominio\obj\Debug\Dominio.pdb

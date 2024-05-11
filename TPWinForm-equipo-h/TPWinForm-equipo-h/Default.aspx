@@ -17,11 +17,11 @@
     <h1>Catalago de Productos</h1>
 
 
-    <body>
+
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <%
-                TPWinForm_equipo_h.ImagenNegocio imagen = new TPWinForm_equipo_h.ImagenNegocio();
-                foreach (TPWinForm_equipo_h.Articulo articulo in articuloList)
+                Negocio.ImagenDB imagen = new Negocio.ImagenDB();
+                foreach (Dominio.Articulo articulo in articuloList)
                 {
                     string img = imagen.listarUna(articulo.id);
 
@@ -40,5 +40,5 @@
             </div>
             <% }  %>
         </div>
-    </body>
+    
 </asp:Content>

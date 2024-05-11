@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Dominio;
 
 namespace TPWinForm_equipo_h
 {
@@ -12,7 +14,7 @@ namespace TPWinForm_equipo_h
         public List<Articulo> articuloList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio negocio = new ArticuloNegocio();
+            ArticuloDB negocio = new ArticuloDB();
             articuloList = negocio.listar();
 
         }

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using Dominio;
 
 namespace Negocio
@@ -73,8 +73,8 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                throw;
+                //MessageBox.Show(ex.Message);
+                throw ex;
             }
             finally
             {
@@ -118,8 +118,8 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                throw;
+               // MessageBox.Show(ex.Message);
+                throw ex;
             }
             finally
             {

@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using Dominio;
 
 namespace Negocio
@@ -28,9 +28,49 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                MessageBox.Show("La imagen " + imagen.url + " no se pudo cargar...");
+                throw ex;
+                // MessageBox.Show("La imagen " + imagen.url + " no se pudo cargar...");
             }
             finally { connection.Close(); }
         }
+
+
+        public string listarUna(int idArticulo)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            try
+            {
+                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true ";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT TOP 1 * FROM IMAGENES WHERE IdArticulo = @idArticulo;";
+                comando.Parameters.AddWithValue("@idArticulo", idArticulo);
+                comando.Connection = conexion;
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                Imagen imagen = new Imagen();
+                string img = null;
+                while (lector.Read())
+                {
+                    imagen.id = lector.GetInt32(0);
+                    imagen.idArticulo = lector.GetInt32(1);
+                    imagen.url = (string)lector["ImagenUrl"];
+
+
+                }
+                img = imagen.url;
+                conexion.Close();
+                
+                return img;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }
