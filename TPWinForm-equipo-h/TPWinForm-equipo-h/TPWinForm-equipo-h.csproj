@@ -72,7 +72,7 @@
     <Content Include="Global.asax" />
     <Content Include="Imagenes\EquipoH.png" />
     <Content Include="Imagenes\sinImagen.jpg" />
-    <Content Include="Style.css" />
+    <Content Include="StyleM.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

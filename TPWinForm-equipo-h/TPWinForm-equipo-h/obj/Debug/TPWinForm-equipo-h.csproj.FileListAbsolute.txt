@@ -120,3 +120,7 @@ C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-e
 C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Negocio.dll
 C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Dominio.pdb
 C:\Users\Nicolas\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Negocio.pdb
+C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Dominio.dll
+C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Negocio.dll
+C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Dominio.pdb
+C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\TPWinForm-equipo-h\bin\Negocio.pdb

@@ -1,26 +1,28 @@
-﻿*{
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-header img{
-    display:flex;
-    margin:0 auto;
-    justify-content:center;
-    text-align:center;
+
+header img {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
 }
+
 menu {
     display: flex;
     justify-content: center;
     z-index: 100;
     height: 70px;
-    max-width: 1200%;
-    position: absolute;
+    max-width: 100%;
+    position: relative;
     background: black;
     overflow: auto;
     top: 0;
     right: 0;
-   /* margin-right: 200px;
+    /* margin-right: 200px;
     font-weight: 700;*/
 }
 menu ul{
@@ -60,8 +62,8 @@ footer {
     height: 70px;
     max-width: 1200%;
     position: relative;
-    color:white;
-    background:black;
+    color: white;
+    background: black;
     text-align: center;
     font-size: 16px;
     height: 60px;
