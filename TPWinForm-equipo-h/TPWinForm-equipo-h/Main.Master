@@ -2,6 +2,50 @@
 
 <!DOCTYPE html>
 
+ <style>
+
+        .endear {
+            display: flex;
+            justify-content: flex-end; /* Alinear contenido a la derecha */         
+        }
+        .icono-cart {
+            font-size: 24px; /* Ajusta el tamaño del icono según sea necesario */
+        }
+
+         .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .search-button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 0 20px 20px 0;
+            cursor: pointer;
+        }
+
+        /* Estilos para el ícono de lupa */
+        .search-icon {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+</style>
+
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,11 +64,31 @@
                 <img src="Imagenes/EquipoH.png" alt="Equipo H" />
                 
             </header>
+
+
+
+
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Buscar...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+
+
             <menu class="menu">
-                <li><button type="button" class="btn btn-outline-light">Buscar</button></li>
-                <li><input type="email" name="email" id="email" placeholder="Articulo..."></li>
+
                 <li><a href="Default.aspx" runat="server">Inicio</a></li>
-               <li><a href="CarritoCompras.aspx" runat="server"></a><i class="fa-solid fa-cart-shopping" runat="server"></i><asp:Label ID="Label1" runat="server" Text="0"></asp:Label></li> 
+
+                <div class="endear">
+                        <ul>
+                            <li>
+                                <a href="CarritoCompras.aspx" runat="server"></a>
+                                <i class="fa-solid fa-cart-shopping icono-cart" runat="server"></i>
+                                <asp:Label ID="Label1" runat="server" Text="0" style="color: white;"></asp:Label>
+                            </li>
+                        </ul>
+                </div>
+
+
                 
             </menu>
             <section>
