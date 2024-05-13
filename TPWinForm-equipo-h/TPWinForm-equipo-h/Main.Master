@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 
  <style>
-
+         .center-container {
+            text-align: center; /* Centra horizontalmente los elementos */
+        }
         .endear {
             display: flex;
             justify-content: flex-end; /* Alinear contenido a la derecha */         
@@ -13,17 +15,17 @@
         }
 
          .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 300px;
+            display: inline-block;
+            width: 250px;
             border: 1px solid #ccc;
             border-radius: 20px;
             overflow: hidden;
+            margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         .search-input {
-            flex: 1;
+            width: 207.6px;
             border: none;
             outline: none;
             padding: 10px;
@@ -42,7 +44,6 @@
         /* Estilos para el ícono de lupa */
         .search-icon {
             font-size: 20px;
-            margin-right: 5px;
         }
 </style>
 
@@ -67,10 +68,12 @@
 
 
 
+            <div class="center-container">
 
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Buscar...">
-                <button class="search-button"><i class="fas fa-search"></i></button>
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Buscar...">
+                    <button class="search-button"><i class="fas fa-search"></i></button>
+                </div>
             </div>
 
 
