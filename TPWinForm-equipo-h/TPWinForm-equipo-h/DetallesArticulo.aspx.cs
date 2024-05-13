@@ -22,8 +22,16 @@ namespace TPWinForm_equipo_h
 
             List<Articulo> detalleOrg = (List<Articulo>)Session["articulosList"];
             Articulo select = detalleOrg.Find(x=>x.id == id);
-            detalle.Add(select);    
+            lblNombreArticulo.Text = select.nombre;
+            lblDescripcionArticulo.Text = select.descripcion;
+            lblCategoriaArticulo.Text = select.Categoria.Descripcion;
+            lblMarcaArticulo.Text = select.Marca.Descripcion;
+            lblPrecioArticulo.Text = select.precio.ToString();
+            ImagenDB imagen = new ImagenDB();
+            string img = imagen.listarUna(id);
+            /*detalle.Add(select);*/
 
+            
 
 
             dgvArtDetalle.DataSource = detalle;

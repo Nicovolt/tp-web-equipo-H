@@ -30,7 +30,8 @@
                     <asp:Repeater ID="repeaterImagenes" runat="server" >
                         <ItemTemplate>
                             <div class='carousel-item<%# (bool)Eval("IsFirst") ? " active" : "" %>' style="height: 100%;">
-                                <asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Eval("imagenUrl") %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
+                                <!--<asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Eval("imagenUrl") %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />-->
+                                <asp:Image src="img" ID="Image1" runat="server" ImageUrl="img" CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
