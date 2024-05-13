@@ -55,7 +55,7 @@
                         <h5 class="card-title"><%:articulo.nombre %></h5>
                         <p class="card-text">Descripcio: <%:articulo.descripcion %></p>
                         <p class="card-text">Precio: <%:articulo.precio %></p>
-                        <asp:Button Text="Ver detalle" CssClass="btn btn-primary btn-lg" runat="server" />
+                        <asp:Button ID="btnVerDetalle" Text="Ver detalle" CssClass="btn btn-primary btn-lg" runat="server"  OnClick="btnVerDetalle_Click"/>
                         <asp:Button Text="Agregar al carrito" CssClass="btn btn-primary btn-lg" runat="server" />
                     </div>
                 </div>

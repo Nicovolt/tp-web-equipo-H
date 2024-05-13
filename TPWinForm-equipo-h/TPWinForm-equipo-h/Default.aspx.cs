@@ -18,5 +18,10 @@ namespace TPWinForm_equipo_h
             articuloList = negocio.listar();
 
         }
+
+        protected void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DetallesArticulo.aspx");
+        }
     }
 }

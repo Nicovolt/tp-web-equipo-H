@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CarritoCompras.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DetallesArticulo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\EquipoH.png" />
     <Content Include="Imagenes\sinImagen.jpg" />
@@ -89,6 +90,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallesArticulo.aspx.cs">
+      <DependentUpon>DetallesArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetallesArticulo.aspx.designer.cs">
+      <DependentUpon>DetallesArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
