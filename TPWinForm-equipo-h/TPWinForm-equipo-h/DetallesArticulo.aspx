@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:GridView runat="server" ID="dgvArtDetalle"></asp:GridView>
     <div class="container mt-5">
     <div class="row">
         <!-- Detalles del producto (primera mitad) -->

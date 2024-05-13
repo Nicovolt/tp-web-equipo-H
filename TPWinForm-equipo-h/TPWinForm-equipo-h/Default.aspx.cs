@@ -17,11 +17,14 @@ namespace TPWinForm_equipo_h
             ArticuloDB negocio = new ArticuloDB();
             articuloList = negocio.listar();
 
+            Session.Add("articulosList", articuloList);
+
         }
 
         protected void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DetallesArticulo.aspx?id=");
+            
+           Response.Redirect("DetallesArticulo.aspx?id=");
         }
     }
 }

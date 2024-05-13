@@ -80,12 +80,13 @@
             <menu class="menu">
 
                 <li><a href="Default.aspx" runat="server">Inicio</a></li>
+                
 
+                              
                 <div class="endear">
                         <ul>
                             <li>
-                                <a href="CarritoCompras.aspx" runat="server"></a>
-                                <i class="fa-solid fa-cart-shopping icono-cart" runat="server"></i>
+                                 <a href="CarritoCompras.aspx" runat="server"><i class="fa-solid fa-cart-shopping icono-cart" runat="server"></i></a>
                                 <asp:Label ID="Label1" runat="server" Text="0" style="color: white;"></asp:Label>
                             </li>
                         </ul>

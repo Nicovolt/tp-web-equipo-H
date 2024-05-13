@@ -26,7 +26,8 @@
                 <td>
                     <asp:Label ID="lblPrecioTotal" runat="server" Text="0"></asp:Label></td>
                 <td>
-                    <asp:Button ID="btnComprar" runat="server" Text="Comprar" OnClick="btnComprar_Click" /></td>
+                    <!-- comento este boton ya que da error en la pagina de carrito -->
+                  
             </tr>
         </tfoot>
     </table>
