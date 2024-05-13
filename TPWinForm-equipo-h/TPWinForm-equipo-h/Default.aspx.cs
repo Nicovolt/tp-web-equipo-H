@@ -21,7 +21,7 @@ namespace TPWinForm_equipo_h
 
         protected void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            Response.Redirect("DetallesArticulo.aspx");
+            Response.Redirect("DetallesArticulo.aspx?id=");
         }
     }
 }

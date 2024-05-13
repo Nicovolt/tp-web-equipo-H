@@ -11,7 +11,7 @@ namespace TPWinForm_equipo_h
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string idArticulo= Request.QueryString["id"];
         }
     }
 }
