@@ -71,7 +71,7 @@
             <div class="center-container">
 
                 <div class="search-bar">
-                    <input type="text" class="search-input" placeholder="Buscar...">
+                    <asp:TextBox ID="searchTextBox" runat="server" CssClass="search-input" placeholder="Buscar..."></asp:TextBox>
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
             </div>
