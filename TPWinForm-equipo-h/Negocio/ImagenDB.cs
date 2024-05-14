@@ -61,10 +61,11 @@ namespace Negocio
 
                 }
                 img = imagen.url;
-                if (img == null || img == "")
+                if (img == null)
                 {
-                    img = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
+                    imagen.url = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
                 }
+
                 conexion.Close();
                 
                 return img;
@@ -73,6 +74,49 @@ namespace Negocio
             {
                 throw ex;
             }
+        }
+        public List<string> listarTodas(int idArticulo)
+        {
+            List<string> urlsImagenes = new List<string>();
+
+            try
+            {
+                // Establecer la conexión a la base de datos
+                using (SqlConnection conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true"))
+                {
+                    // Definir la consulta SQL para obtener todas las imágenes asociadas al artículo
+                    string consulta = "SELECT ImagenUrl FROM IMAGENES WHERE IdArticulo = @idArticulo;";
+
+                    // Crear el comando SQL con la consulta y los parámetros
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        // Agregar el parámetro del ID del artículo
+                        comando.Parameters.AddWithValue("@idArticulo", idArticulo);
+
+                        // Abrir la conexión a la base de datos
+                        conexion.Open();
+
+                        // Ejecutar la consulta y leer los resultados
+                        using (SqlDataReader lector = comando.ExecuteReader())
+                        {
+                            // Leer todas las URLs de las imágenes y agregarlas a la lista
+                            while (lector.Read())
+                            {
+                                string urlImagen = lector.GetString(0);
+                                urlsImagenes.Add(urlImagen);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar cualquier excepción que pueda ocurrir durante la recuperación de las imágenes
+                // Por ejemplo, podrías registrar el error en un archivo de registro
+                Console.WriteLine("Error al obtener las imágenes del artículo: " + ex.Message);
+            }
+
+            return urlsImagenes;
         }
 
 

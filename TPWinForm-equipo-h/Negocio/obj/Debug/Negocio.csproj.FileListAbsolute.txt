@@ -25,3 +25,12 @@ C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-eq
 C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.dll
 C:\Users\robie\OneDrive\Escritorio\Programacion III\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\bin\Debug\Negocio.dll
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\bin\Debug\Dominio.dll
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\bin\Debug\Dominio.pdb
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.dll
+C:\Users\Luka\Documents\GitHub\tp-web-equipo-H\TPWinForm-equipo-h\Negocio\obj\Debug\Negocio.pdb

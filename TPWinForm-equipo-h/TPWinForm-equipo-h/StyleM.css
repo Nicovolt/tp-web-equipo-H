@@ -69,3 +69,7 @@ footer {
     height: 60px;
     line-height: 60px;
 }
+.imagen-carrusel {
+    max-width: 100%;
+    max-height: 100%;
+}

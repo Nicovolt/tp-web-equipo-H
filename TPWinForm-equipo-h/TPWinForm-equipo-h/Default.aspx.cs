@@ -11,6 +11,7 @@ namespace TPWinForm_equipo_h
 {
     public partial class Default : System.Web.UI.Page
     {
+
         public List<Articulo> articuloList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {

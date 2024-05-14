@@ -29,9 +29,12 @@
                 <div class="carousel-inner" style="height: 100%;">
                     <asp:Repeater ID="repeaterImagenes" runat="server" >
                         <ItemTemplate>
-                            <div class='carousel-item<%# (bool)Eval("IsFirst") ? " active" : "" %>' style="height: 100%;">
-                                <asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Eval("url") %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
-                            </div>
+                           <div class='carousel-item<%# Container.ItemIndex == 0 ? " active" : "" %>' style="height: 200px;">
+                               <div class="imagen-carrusel">
+                                     <asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Container.DataItem %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
+
+                               </div>
+                           </div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>

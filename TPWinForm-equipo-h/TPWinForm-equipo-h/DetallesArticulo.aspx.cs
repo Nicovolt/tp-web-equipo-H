@@ -31,8 +31,18 @@ namespace TPWinForm_equipo_h
             string img = imagen.listarUna(id);
             repeaterImagenes.DataSource = img;
             /*detalle.Add(select);*/
+            int idArticulo = int.Parse(Request.QueryString["id"]);
 
-            
+
+            // Obtener la lista de todas las imágenes asociadas al artículo
+            ImagenDB imagenDB = new ImagenDB();
+            List<string> urlsImagenes = imagenDB.listarTodas(idArticulo);
+
+            // Asignar la lista de URLs al Repeater
+            repeaterImagenes.DataSource = urlsImagenes;
+            repeaterImagenes.DataBind();
+
+
 
 
             dgvArtDetalle.DataSource = detalle;
