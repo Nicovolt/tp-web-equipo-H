@@ -29,6 +29,7 @@ namespace TPWinForm_equipo_h
             lblPrecioArticulo.Text = select.precio.ToString();
             ImagenDB imagen = new ImagenDB();
             string img = imagen.listarUna(id);
+            repeaterImagenes.DataSource = img;
             /*detalle.Add(select);*/
 
             
