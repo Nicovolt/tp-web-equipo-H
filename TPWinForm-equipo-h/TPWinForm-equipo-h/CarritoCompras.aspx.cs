@@ -19,7 +19,20 @@ namespace TPWinForm_equipo_h
                 List<Articulo> Newcarrito = new List<Articulo>();
                 Session.Add("CarritoCompras", Newcarrito);
             }
+            
+            if(Request.QueryString["id"] == null)
+            {
+                List<Articulo> carrito;
+                carrito = (List<Articulo>)Session["CarritoCompras"];
+                repeaterCarrito.DataSource = carrito;
+                repeaterCarrito.DataBind();
+            }
+            else
+            {
+
             int id = int.Parse(Request.QueryString["id"]);
+
+
             Articulo articulo = new Articulo();
             articulo = articuloDB.buscarPorId(id);
             List<Articulo> carrito = new List<Articulo>();
@@ -27,7 +40,9 @@ namespace TPWinForm_equipo_h
             carrito.Add(articulo);
 
             repeaterCarrito.DataSource = carrito;
+            
             repeaterCarrito.DataBind();
+            }
 
 
 
