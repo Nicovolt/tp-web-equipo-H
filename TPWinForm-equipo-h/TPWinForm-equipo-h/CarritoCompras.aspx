@@ -18,7 +18,19 @@
             </tr>
         </thead>
         <tbody>
-
+            <asp:Repeater ID="repeaterCarrito" runat="server">
+                <ItemTemplate>
+                    <tr>
+                        <td class="d-none" name="id"<%# Eval("id") %></td>
+                        <td><%# Eval("codigo") %></td>
+                        <td><%# Eval("nombre") %></td>
+                        <td><%# Eval("descripcion") %></td>
+                        <td><%# Eval("marca") %></td>
+                        <td><%# Eval("categoria") %></td>
+                        <td><%# Eval("precio") %></td>
+                        </tr>
+                </ItemTemplate>
+            </asp:Repeater>
         </tbody>
         <tfoot>
             <tr>

@@ -232,6 +232,60 @@ namespace Negocio
 
             }
         }
+
+        public Articulo buscarPorId(int Id)
+        {
+            SqlConnection connection = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader = null;
+            MarcaDB marcaService = new MarcaDB();
+            CategoriaDB categoriaService = new CategoriaDB();
+
+            try
+            {
+                connection.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "SELECT * FROM [dbo].[ARTICULOS] WHERE Id = @Id";
+                cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.Connection = connection;
+
+                connection.Open();
+                reader = cmd.ExecuteReader();
+                Articulo articulo;
+
+                while (reader.Read())
+                {
+                    articulo = new Articulo();
+                    articulo.Marca = new Marca();
+                    articulo.Categoria = new Categoria();
+                    articulo.id = reader.GetInt32(0);
+                    articulo.codigo = (string)reader["Codigo"];
+                    articulo.nombre = (string)reader["Nombre"];
+                    articulo.descripcion = (string)reader["Descripcion"];
+                    int idMarca = (int)reader["IdMarca"];
+                    articulo.Marca.Descripcion = marcaService.obtener(idMarca);
+                    int idCategoria = (int)reader["IdCategoria"];
+                    articulo.Categoria.Descripcion = categoriaService.obtener(idCategoria);
+                    articulo.precio = (decimal)reader["Precio"];
+                    if (articulo.id == Id)
+                    {
+                        return articulo;
+                    }
+                }
+                //MessageBox.Show("Articulo no encontrado");
+                return articulo = null;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
 

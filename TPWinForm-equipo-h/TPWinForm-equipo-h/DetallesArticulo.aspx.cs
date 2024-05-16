@@ -20,6 +20,7 @@ namespace TPWinForm_equipo_h
 
             int id = int.Parse(Request.QueryString["id"]);
 
+
             List<Articulo> detalleOrg = (List<Articulo>)Session["articulosList"];
             Articulo select = detalleOrg.Find(x=>x.id == id);
             lblNombreArticulo.Text = select.nombre;
