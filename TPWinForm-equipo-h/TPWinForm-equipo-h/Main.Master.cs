@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +13,21 @@ namespace TPWinForm_equipo_h
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+               
+                List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
+                int cantArticulos = carritoActual != null ? carritoActual.Count : 0;
 
-
-  
-
+                
+                ActualizarContadorCarrito(cantArticulos);
+            }
         }
+
+        public void ActualizarContadorCarrito(int contador)
+        {
+            Label1.Text = contador.ToString();
+        }
+
     }
 }

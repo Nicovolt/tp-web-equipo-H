@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,6 +12,8 @@ namespace TPWinForm_equipo_h
 {
     public partial class CarritoCompras : System.Web.UI.Page
     {
+
+      
         private ArticuloDB articuloDB = new ArticuloDB();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,6 +29,8 @@ namespace TPWinForm_equipo_h
                 carrito = (List<Articulo>)Session["CarritoCompras"];
                 repeaterCarrito.DataSource = carrito;
                 repeaterCarrito.DataBind();
+                List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
+                int cantArticulos = carritoActual.Count;
             }
             else
             {
@@ -42,11 +47,19 @@ namespace TPWinForm_equipo_h
             repeaterCarrito.DataSource = carrito;
             
             repeaterCarrito.DataBind();
+            List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
+            int cantArticulos = carritoActual.Count;
+
+
+                Main masterPage = (Main)this.Master;
+                masterPage.ActualizarContadorCarrito(cantArticulos);
+                
             }
 
 
 
 
         }
+
     }
 }
