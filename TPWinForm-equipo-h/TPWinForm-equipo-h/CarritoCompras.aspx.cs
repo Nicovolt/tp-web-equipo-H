@@ -17,10 +17,13 @@ namespace TPWinForm_equipo_h
         private ArticuloDB articuloDB = new ArticuloDB();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["CarritoCompras"] == null)
+            if (!IsPostBack)
             {
-                List<Articulo> Newcarrito = new List<Articulo>();
-                Session.Add("CarritoCompras", Newcarrito);
+                if (Session["CarritoCompras"] == null)
+                {
+                    List<Articulo> Newcarrito = new List<Articulo>();
+                    Session.Add("CarritoCompras", Newcarrito);
+                }
             }
             
             if(Request.QueryString["id"] == null)
@@ -31,6 +34,8 @@ namespace TPWinForm_equipo_h
                 repeaterCarrito.DataBind();
                 List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
                 int cantArticulos = carritoActual.Count;
+
+               
             }
             else
             {
@@ -53,13 +58,25 @@ namespace TPWinForm_equipo_h
 
                 Main masterPage = (Main)this.Master;
                 masterPage.ActualizarContadorCarrito(cantArticulos);
-                
+
+
+
+
+
             }
 
-
+            List<Articulo> carritoAct = (List<Articulo>)Session["CarritoCompras"];
+            decimal total = 0;
+            foreach (Articulo art in carritoAct)
+            {
+                total += art.precio;
+            }
+            lblPrecioTotal.Text = total.ToString();
 
 
         }
+
+
 
     }
 }
