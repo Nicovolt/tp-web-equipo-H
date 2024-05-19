@@ -30,8 +30,7 @@ namespace TPWinForm_equipo_h
             {
                 List<Articulo> carrito;
                 carrito = (List<Articulo>)Session["CarritoCompras"];
-                repeaterCarrito.DataSource = carrito;
-                repeaterCarrito.DataBind();
+                cargarCarrito(carrito);
                 List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
                 int cantArticulos = carritoActual.Count;
 
@@ -73,10 +72,47 @@ namespace TPWinForm_equipo_h
             }
             lblPrecioTotal.Text = total.ToString();
 
+        }
+
+        private void cargarCarrito(List<Articulo> carrito)
+        {
+            repeaterCarrito.DataSource = carrito;
+            repeaterCarrito.DataBind();
 
         }
 
+        private void EliminarArticulo(Articulo articulo)
+        {
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = (List<Articulo>)Session["CarritoCompras"];
+
+            for (int i = 0; i < carrito.Count; i++)
+            {
+                if (carrito[i].id == articulo.id)
+                {
+                    carrito.RemoveAt(i);
+                    return;
+                }
+            }
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+            Articulo articulo = new Articulo();
+            articulo = articuloDB.buscarPorId(id);
+            List<Articulo> carrito = new List<Articulo>();
+            carrito = (List<Articulo>)Session["CarritoCompras"];
+
+            EliminarArticulo(articulo);
+
+            cargarCarrito(carrito);
+            List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
+            int cantArticulos = carritoActual.Count;
+
+            Main masterPage = (Main)this.Master;
+            masterPage.ActualizarContadorCarrito(cantArticulos);
 
 
+        }
     }
 }

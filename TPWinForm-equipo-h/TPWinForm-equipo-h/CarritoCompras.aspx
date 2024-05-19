@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="CarritoCompras.aspx.cs" Inherits="TPWinForm_equipo_h.CarritoCompras" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="CarritoCompras.aspx.cs" Inherits="TPWinForm_equipo_h.CarritoCompras" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -15,6 +15,7 @@
                 <th>Marca</th>
                 <th>Categoría</th>
                 <th>Precio</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
                         <td><%# Eval("marca") %></td>
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("precio") %></td>
+                        <td><asp:Button ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("id") %>' CommandName="idArticulo"/></td> 
                         </tr>
                 </ItemTemplate>
             </asp:Repeater>
