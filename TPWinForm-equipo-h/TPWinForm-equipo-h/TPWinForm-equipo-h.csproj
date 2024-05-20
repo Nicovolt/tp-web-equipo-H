@@ -71,6 +71,7 @@
     <Content Include="Default.aspx" />
     <Content Include="DetallesArticulo.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\EquipoH-removebg-preview.png" />
     <Content Include="Imagenes\EquipoH.png" />
     <Content Include="Imagenes\sinImagen.jpg" />
     <Content Include="StyleM.css" />

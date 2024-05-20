@@ -24,6 +24,13 @@
             justify-content: center;
             align-items: center;
         }
+        .titulo-catalogo {
+            text-align: center;
+            font-size: 2rem; /* Tamaño de fuente */
+            color: #333; /* Color del texto */
+            margin-bottom: 30px; /* Espacio inferior */
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+        }
 
 
        
@@ -53,7 +60,8 @@
             <asp:Literal ID="Resultados" runat="server"></asp:Literal>
         </div>
 
-    <h1>Catalago de Productos</h1>
+        <h1 class="titulo-catalogo">Catálogo de Productos</h1>
+
 
     </div>
 
