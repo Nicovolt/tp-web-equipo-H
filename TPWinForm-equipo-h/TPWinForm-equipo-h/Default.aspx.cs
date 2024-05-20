@@ -35,9 +35,18 @@ namespace TPWinForm_equipo_h
 
             string busqueda = searchTextBox.Text.Trim();
 
-            articulos = BuscarArticulosPorNombre(busqueda);
+            if (string.IsNullOrEmpty(busqueda))
+            {
+                Resultados.Text = "";
+            }
+            else
+            {
+       
+                articulos = BuscarArticulosPorNombre(busqueda);
+                MostrarResultados(articulos);
+            }
 
-            MostrarResultados(articulos);
+
 
 
         }
