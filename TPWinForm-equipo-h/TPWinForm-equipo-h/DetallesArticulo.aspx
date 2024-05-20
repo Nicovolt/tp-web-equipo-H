@@ -6,7 +6,7 @@
     <div class="container mt-5">
     <div class="row">
         <!-- Detalles del producto (primera mitad) -->
-        <div class="col-md-6" style="display:flex; flex-direction:column; justify-content:space-around;">
+        <div class="col-md-6" style="display:flex; flex-direction:column; justify-content:space-around; color: #000000 ">
             <h2 style="text-align: center;">Detalle de producto</h2>
             <hr />
             <div style="display:flex;flex-direction: column;">

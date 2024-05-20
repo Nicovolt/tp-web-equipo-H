@@ -76,18 +76,35 @@ footer {
 
 h1 {
     font-size: 3em;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    background: linear-gradient(45deg, #000, black);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid black;
     border-radius: 10px;
     padding: 10px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .titulo-catalogo {
     text-align: center;
-    font-size: 2rem; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
-    margin-bottom: 30px; /* Espacio inferior */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    font-size: 2rem;
+    color: #000; 
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
+}
+
+h2 {
+    font-size: 3em;
+    background: linear-gradient(45deg, #000, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+details {
+    background: linear-gradient(45deg, #000, black);
+    font-size: 3em;
+    margin-bottom: 5px;
 }

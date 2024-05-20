@@ -51,6 +51,7 @@ namespace TPWinForm_equipo_h
             repeaterCarrito.DataSource = carrito;
             
             repeaterCarrito.DataBind();
+
             List<Articulo> carritoActual = (List<Articulo>)Session["CarritoCompras"];
             int cantArticulos = carritoActual.Count;
 

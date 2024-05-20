@@ -7,7 +7,7 @@
          .titulo-catalogo {
               text-align: center;
               font-size: 2rem; /* Tamaño de fuente */
-              color: #333; /* Color del texto */
+              color:#000000; /* Color del texto */
                margin-top: 15px;
               margin-bottom: 15px; /* Espacio inferior */
               text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
