@@ -87,11 +87,12 @@
                                 <!--<asp:Button Text="Agregar al carrito" CssClass="btn btn-primary btn-lg" runat="server" />-->
                                 <a href="CarritoCompras.aspx?id=<%=articulo.id %>" class="btn btn-primary" onclick="redireccionarCarrito()">Agregar al carrito</a>
                                <script>
+                                   // Redirecciona a default.aspx de manera inperceptible llevando asi los datos de articulo id
                                    function redireccionarCarrito() {
-                                       // Redireccionar a "CarritoCompras.aspx" después de un breve retraso
+                              
                                        setTimeout(function () {
                                            window.location.href = "Default.aspx";
-                                       }, 5);
+                                       }, 7);
                                    }
                                </script>
 

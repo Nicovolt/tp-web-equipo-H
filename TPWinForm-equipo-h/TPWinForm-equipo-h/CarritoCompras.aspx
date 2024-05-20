@@ -15,6 +15,7 @@
          }
     </style>
 
+
                             
         <h1 class="titulo-catalogo">Carrito de compras</h1>
  
@@ -42,8 +43,9 @@
                         <td><%# Eval("marca") %></td>
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("precio") %></td>
-                        <td><asp:Button ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("id") %>' CommandName="idArticulo"/></td> 
-                        </tr>
+                        <td><asp:Button ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("id") %>' CommandName="idArticulo"/></td>
+                        
+                    </tr>
                 </ItemTemplate>
             </asp:Repeater>
         </tbody>

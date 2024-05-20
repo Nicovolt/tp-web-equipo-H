@@ -73,6 +73,8 @@ namespace TPWinForm_equipo_h
             }
             lblPrecioTotal.Text = total.ToString();
 
+            
+
         }
 
         private void cargarCarrito(List<Articulo> carrito)
@@ -112,6 +114,7 @@ namespace TPWinForm_equipo_h
 
             Main masterPage = (Main)this.Master;
             masterPage.ActualizarContadorCarrito(cantArticulos);
+            Response.Redirect("CarritoCompras.aspx");
 
 
         }
