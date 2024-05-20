@@ -85,7 +85,15 @@
                                 <a href= "DetallesArticulo.aspx?id=<%=articulo.id %> " class="btn btn-primary"> Ver detalle </a>
                                 <!--<asp:Button ID="btnVerDetalle" Text="Ver detalle" CssClass="btn btn-primary btn-lg" runat="server"  OnClick="btnVerDetalle_Click"/>-->
                                 <!--<asp:Button Text="Agregar al carrito" CssClass="btn btn-primary btn-lg" runat="server" />-->
-                                <a href= "CarritoCompras.aspx?id=<%=articulo.id %> " class="btn btn-primary"> Agregar al carrito </a>
+                                <a href="CarritoCompras.aspx?id=<%=articulo.id %>" class="btn btn-primary" onclick="redireccionarCarrito()">Agregar al carrito</a>
+                               <script>
+                                   function redireccionarCarrito() {
+                                       // Redireccionar a "CarritoCompras.aspx" después de un breve retraso
+                                       setTimeout(function () {
+                                           window.location.href = "Default.aspx";
+                                       }, 5);
+                                   }
+                               </script>
 
 
                             </div>
