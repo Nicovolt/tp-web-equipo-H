@@ -86,6 +86,8 @@
                                 <!--<asp:Button ID="btnVerDetalle" Text="Ver detalle" CssClass="btn btn-primary btn-lg" runat="server"  OnClick="btnVerDetalle_Click"/>-->
                                 <!--<asp:Button Text="Agregar al carrito" CssClass="btn btn-primary btn-lg" runat="server" />-->
                                 <a href= "CarritoCompras.aspx?id=<%=articulo.id %> " class="btn btn-primary"> Agregar al carrito </a>
+
+
                             </div>
                         </div>
                     </div>

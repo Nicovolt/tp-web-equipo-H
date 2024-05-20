@@ -96,7 +96,10 @@ namespace TPWinForm_equipo_h
             }
         }
 
+        protected void Carrito(object sender, EventArgs e)
+        {
 
 
+        }
     }
 }
