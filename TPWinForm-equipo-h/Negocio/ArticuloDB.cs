@@ -31,12 +31,12 @@ namespace Negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-            datos.setearConsulta("insert into MARCAS (Descripcion) values ('" +  nuevo.Descripcion + "')");
-            datos.setearParametro("@idCategoria", nuevo.Id);
-            datos.ejecutarAccion();
+                datos.setearConsulta("insert into MARCAS (Descripcion) values ('" + nuevo.Descripcion + "')");
+                datos.setearParametro("@idCategoria", nuevo.Id);
+                datos.ejecutarAccion();
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
                 //MessageBox.Show(ex.ToString());
@@ -60,6 +60,7 @@ namespace Negocio
             }
             finally { datos.cerrarConexion(); }
         }
+
 
         public List<Articulo> listar()
         {
@@ -284,6 +285,49 @@ namespace Negocio
             finally
             {
                 connection.Close();
+            }
+        }
+
+
+
+        public List<Articulo> BuscarPorNombre(string nombre)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            MarcaDB marcaDB = new MarcaDB();
+            CategoriaDB categoriaDB = new CategoriaDB();
+
+            try
+            {
+                datos.setearConsulta("SELECT * FROM ARTICULOS WHERE Nombre LIKE @Nombre");
+                datos.setearParametro("@Nombre", "%" + nombre + "%");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo articulo = new Articulo();
+                    articulo.id = (int)datos.Lector["Id"];
+                    articulo.codigo = (string)datos.Lector["Codigo"];
+                    articulo.nombre = (string)datos.Lector["Nombre"];
+                    articulo.descripcion = (string)datos.Lector["Descripcion"];
+                    int idMarca = (int)datos.Lector["IdMarca"];
+                    articulo.Marca = new Marca();
+                    articulo.Marca.Descripcion = marcaDB.obtener(idMarca);
+                    int idCategoria = (int)datos.Lector["IdCategoria"];
+                    articulo.Categoria = new Categoria();
+                    articulo.Categoria.Descripcion = categoriaDB.obtener(idCategoria);
+                    articulo.precio = (decimal)datos.Lector["Precio"];
+                    lista.Add(articulo);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }

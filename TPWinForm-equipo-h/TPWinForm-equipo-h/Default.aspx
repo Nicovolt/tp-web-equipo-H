@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TPWinForm_equipo_h.Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+
+
     <style>
         
         .card img{
@@ -22,21 +28,32 @@
 
        
     </style>
+    
+            <div class="center-container">
+
+                <div class="search-bar">
+                    <asp:TextBox ID="searchTextBox" runat="server" CssClass="search-input" placeholder="Buscar..." onkeydown="enter(event)"></asp:TextBox>
+                    <asp:LinkButton ID="btnSearch" runat="server" CssClass="search-button" OnClick="btnSearch_Click" type="button">
+                     <i class="fas fa-search"></i>
+                    </asp:LinkButton>
+               </div>
+                <script>
+                    function enter(event) {
+                        if (event.keyCode === 13 || event.which === 13) {
+                            event.preventDefault();
+                            document.getElementById('<%= btnSearch.ClientID %>').click();
+                         }
+                     }
+                        
+
+                </script>
+
+            </div>
+         <div class="row row-cols-1 row-cols-md-3 g-4">
+            <asp:Literal ID="Resultados" runat="server"></asp:Literal>
+        </div>
 
     <h1>Catalago de Productos</h1>
-
-       <div class="container">
-        <nav aria-label="...">
-            <ul class="pagination pagination-lg">
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">1</span>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-            </ul>
-        </nav>
-    </div>
-
 
     </div>
 
