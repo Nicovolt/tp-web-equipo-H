@@ -21,20 +21,23 @@
                 <span class="texto-secundario" >Precio: </span>
                 <asp:Label ID="lblPrecioArticulo" runat="server" Text="" CssClass="font-weight-bold"></asp:Label>
                 <hr />
+                <div>
+                     <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Agregar al carrito"  CssClass="btn btn-danger" />                               
+                </div>
             </div>
         </div>
         <!-- Carrusel de imágenes (segunda mitad) -->
         <div class="col-md-6" style="height:60vh;">
             <div id="carouselExample" class="carousel slide" style="height: 100%;" data-bs-ride="carousel">
                 <div class="carousel-inner" style="height: 100%;">
-                    <asp:Repeater ID="repeaterImagenes" runat="server" >
+                    <asp:Repeater ID="repeaterImagenes" runat="server">
                         <ItemTemplate>
-                           <div class='carousel-item<%# Container.ItemIndex == 0 ? " active" : "" %>' style="height: 200px;">
-                               <div class="imagen-carrusel">
-                                     <asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Container.DataItem %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
+                            <div class='carousel-item<%# Container.ItemIndex == 0 ? " active" : "" %>' style="height: 200px;">
+                                <div class="imagen-carrusel">
+                                    <asp:Image ID="imgArticulo" runat="server" ImageUrl='<%# Container.DataItem %>' CssClass="d-block w-100 artImagen" alt="No se pudo cargar la imagen" />
 
-                               </div>
-                           </div>
+                                </div>
+                            </div>
                         </ItemTemplate>
                     </asp:Repeater>
                 </div>

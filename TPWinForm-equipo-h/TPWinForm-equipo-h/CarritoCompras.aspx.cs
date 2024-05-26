@@ -24,7 +24,7 @@ namespace TPWinForm_equipo_h
                     List<Articulo> Newcarrito = new List<Articulo>();
                     Session.Add("CarritoCompras", Newcarrito);
                 }
-            }
+            }       
             
             if(Request.QueryString["id"] == null)
             {
