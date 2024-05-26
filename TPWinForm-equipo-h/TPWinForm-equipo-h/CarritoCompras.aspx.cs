@@ -118,5 +118,9 @@ namespace TPWinForm_equipo_h
 
 
         }
+
+
+
+
     }
 }

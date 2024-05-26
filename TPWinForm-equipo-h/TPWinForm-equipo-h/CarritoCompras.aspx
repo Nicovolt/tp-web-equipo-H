@@ -3,6 +3,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+   <script type="text/javascript">
+       function incrementarCantidad(id, labelClass) {
+           var labelCantidad = document.querySelector(labelClass);
+           var cantidad = parseInt(labelCantidad.innerText);
+           cantidad++;
+           labelCantidad.innerText = cantidad;
+           return false; 
+       }
+
+       function decrementarCantidad(id, labelClass) {
+           var labelCantidad = document.querySelector(labelClass);
+           var cantidad = parseInt(labelCantidad.innerText);
+           if (cantidad > 1) {
+               cantidad--;
+               labelCantidad.innerText = cantidad;
+           }
+           return false; 
+       }
+   </script>
+
     <style>
          .titulo-catalogo {
               text-align: center;
@@ -44,7 +64,14 @@
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("precio") %></td>
                         <td><asp:Button ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("id") %>' CommandName="idArticulo"/></td>
-                        
+            <td>
+<asp:Button ID="btnDecrementar" runat="server" Text="-" OnClientClick='<%# "decrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
+                <asp:Label ID="lblCantidad" CssClass="cantidadLabel" runat="server" Text="1"></asp:Label>
+
+<asp:Button ID="btnIncrementar" runat="server" Text="+" OnClientClick='<%# "incrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
+
+
+</td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
