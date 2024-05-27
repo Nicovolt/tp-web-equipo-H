@@ -67,9 +67,21 @@ namespace TPWinForm_equipo_h
 
             List<Articulo> carritoAct = (List<Articulo>)Session["CarritoCompras"];
             decimal total = 0;
+            int cantidad=0;
+            foreach (RepeaterItem item in repeaterCarrito.Items)
+            {
+                System.Web.UI.WebControls.Label lblCantidad = (System.Web.UI.WebControls.Label)item.FindControl("lblCantidad");
+                if (lblCantidad != null)
+                {
+                    cantidad = int.Parse(lblCantidad.Text);
+                }
+
+            }
+
             foreach (Articulo art in carritoAct)
             {
-                total += art.precio;
+
+                total += art.precio * cantidad;
             }
             lblPrecioTotal.Text = total.ToString();
 

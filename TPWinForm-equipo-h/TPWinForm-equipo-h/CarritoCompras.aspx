@@ -64,14 +64,11 @@
                         <td><%# Eval("categoria") %></td>
                         <td><%# Eval("precio") %></td>
                         <td><asp:Button ID="btnEliminar" runat="server" Text="X" OnClick="btnEliminar_Click" CommandArgument='<%# Eval("id") %>' CommandName="idArticulo"/></td>
-            <td>
-<asp:Button ID="btnDecrementar" runat="server" Text="-" OnClientClick='<%# "decrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
-                <asp:Label ID="lblCantidad" CssClass="cantidadLabel" runat="server" Text="1"></asp:Label>
-
-<asp:Button ID="btnIncrementar" runat="server" Text="+" OnClientClick='<%# "incrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
-
-
-</td>
+                        <td>
+                             <asp:Button ID="btnDecrementar" runat="server" Text="-" OnClientClick='<%# "decrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
+                             <asp:Label ID="lblCantidad" CssClass="cantidadLabel" runat="server" Text="1"></asp:Label>
+                             <asp:Button ID="btnIncrementar" runat="server" Text="+" OnClientClick='<%# "incrementarCantidad(" + Eval("id") + ", \".cantidadLabel\"); return false;" %>' />
+                        </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
