@@ -22,7 +22,7 @@
                 <asp:Label ID="lblPrecioArticulo" runat="server" Text="" CssClass="font-weight-bold"></asp:Label>
                 <hr />
                 <div>
-                     <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Agregar al carrito"  CssClass="btn btn-danger" />                               
+                     <asp:Button ID="btnCarrito" runat="server" OnClick="btnCarrito_Click" Text="Agregar al carrito"  CssClass="btn btn-success" />                               
                 </div>
             </div>
         </div>

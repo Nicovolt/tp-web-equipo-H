@@ -26,11 +26,11 @@
     <style>
          .titulo-catalogo {
               text-align: center;
-              font-size: 2rem; /* Tamaño de fuente */
-              color:#000000; /* Color del texto */
+              font-size: 2rem; 
+              color:#000000; 
                margin-top: 15px;
-              margin-bottom: 15px; /* Espacio inferior */
-              text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+              margin-bottom: 15px; 
+              text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
 
          }
     </style>

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Dominio;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Negocio
 {
@@ -51,24 +52,26 @@ namespace Negocio
                 lector = comando.ExecuteReader();
 
                 Imagen imagen = new Imagen();
-                string img = null;
                 while (lector.Read())
                 {
                     imagen.id = lector.GetInt32(0);
                     imagen.idArticulo = lector.GetInt32(1);
-                    imagen.url = (string)lector["ImagenUrl"];
 
+                    if (!lector.IsDBNull(lector.GetOrdinal("ImagenUrl")))
+                    {
+                        imagen.url = lector.GetString(lector.GetOrdinal("ImagenUrl"));
+                    }
+                    else
+                    {
+                        imagen.url = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
+                    }
+                }
 
-                }
-                img = imagen.url;
-                if (img == null)
-                {
-                    imagen.url = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
-                }
 
                 conexion.Close();
-                
-                return img;
+
+                return imagen.url;
+
             }
             catch (Exception ex)
             {
@@ -102,8 +105,16 @@ namespace Negocio
                             // Leer todas las URLs de las imágenes y agregarlas a la lista
                             while (lector.Read())
                             {
-                                string urlImagen = lector.GetString(0);
-                                urlsImagenes.Add(urlImagen);
+                                if (!lector.IsDBNull(0))
+                                {
+
+                                   string urlImagen = lector.GetString(0);
+                                    urlsImagenes.Add(urlImagen);
+                                }
+                                else
+                                {
+                                    urlsImagenes.Add("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+                                }
                             }
                         }
                     }

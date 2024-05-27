@@ -63,7 +63,6 @@
         <h1 class="titulo-catalogo">Catálogo de Productos</h1>
 
 
-    </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <%
@@ -77,15 +76,14 @@
                  %>
                     <div class="col">
                         <div class="card">
-                            <img src="<%= imageUrl %>??"https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg" class="card-img-top" alt="Imagen del artículo">
+                          
+                            <img  src="<%= imageUrl %>" class="card-img-top" alt="Imagen del artículo"  />
                             <div class="card-body">
                                 <h5 class="card-title"><%:articulo.nombre %></h5>
                                 <p class="card-text">Descripcio: <%:articulo.descripcion %></p>
                                 <p class="card-text">Precio: <%:articulo.precio %></p>
                                 <a href= "DetallesArticulo.aspx?id=<%=articulo.id %> " class="btn btn-primary"> Ver detalle </a>
-                                <!--<asp:Button ID="btnVerDetalle" Text="Ver detalle" CssClass="btn btn-primary btn-lg" runat="server"  OnClick="btnVerDetalle_Click"/>-->
-                                <!--<asp:Button Text="Agregar al carrito" CssClass="btn btn-primary btn-lg" runat="server" />-->
-                                <a href="CarritoCompras.aspx?id=<%=articulo.id %>" class="btn btn-danger" onclick="redireccionarCarrito()">Agregar al carrito</a>
+                                <a href="CarritoCompras.aspx?id=<%=articulo.id %>" class="btn btn-success" onclick="redireccionarCarrito()">Agregar al carrito</a>
                                <script>
                                    // Redirecciona a default.aspx de manera inperceptible llevando asi los datos de articulo id
                                    function redireccionarCarrito() {
