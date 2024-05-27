@@ -41,9 +41,10 @@ namespace TPWinForm_equipo_h
 
             int id = int.Parse(Request.QueryString["id"]);
 
-
-            Articulo articulo = new Articulo();
-            articulo = articuloDB.buscarPorId(id);
+                
+                Articulo articulo = new Articulo();
+                articulo.Cantidad = 1;
+                articulo = articuloDB.buscarPorId(id);
             List<Articulo> carrito = new List<Articulo>();
             carrito = (List<Articulo>)Session["CarritoCompras"];
             carrito.Add(articulo);
@@ -65,7 +66,13 @@ namespace TPWinForm_equipo_h
 
             }
 
-            List<Articulo> carritoAct = (List<Articulo>)Session["CarritoCompras"];
+           
+
+        }
+            private void ActualizarPrecioTotal(List<Articulo> carritoAct)
+            {
+            
+             
             decimal total = 0;
             int cantidad=0;
             foreach (RepeaterItem item in repeaterCarrito.Items)
@@ -81,13 +88,14 @@ namespace TPWinForm_equipo_h
             foreach (Articulo art in carritoAct)
             {
 
-                total += art.precio * cantidad;
+                total += art.precio * art.Cantidad;
             }
             lblPrecioTotal.Text = total.ToString();
+           
+        
+            }
 
-            
 
-        }
 
         private void cargarCarrito(List<Articulo> carrito)
         {
@@ -131,7 +139,40 @@ namespace TPWinForm_equipo_h
 
         }
 
+        protected void btnAumentarCantidad_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+            ModificarCantidad(id, 1); // Aumentar cantidad en 1
+        }
 
+        protected void btnDisminuirCantidad_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+            ModificarCantidad(id, -1); // Disminuir cantidad en 1
+        }
+
+        private void ModificarCantidad(int idArticulo, int cantidadModificar)
+        {
+            List<Articulo> carrito = (List<Articulo>)Session["CarritoCompras"];
+
+            // Buscar el artículo en el carrito
+            Articulo articulo = carrito.Find(a => a.id == idArticulo);
+            if (articulo != null)
+            {
+                // Aumentar o disminuir la cantidad según el parámetro proporcionado
+                articulo.Cantidad += cantidadModificar;
+
+                // Asegurarse de que la cantidad no sea menor que 0
+                if (articulo.Cantidad < 0)
+                {
+                    articulo.Cantidad = 0;
+                }
+
+                // Actualizar el repeater y el precio total
+                cargarCarrito(carrito);
+                ActualizarPrecioTotal(carrito);
+            }
+        }
 
 
     }

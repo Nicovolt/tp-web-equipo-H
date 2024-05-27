@@ -20,5 +20,7 @@ namespace Dominio
 
         public Imagen imagen { get; set; }
 
+        public int Cantidad { get; set; }   
+
     }
 }
