@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|c:\\users\\luka\\documents\\github\\tp-web-equipo-h\\tpwinform-equipo-h\\negocio\\articulodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\articulodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|c:\\users\\luka\\documents\\github\\tp-web-equipo-h\\tpwinform-equipo-h\\negocio\\imagendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\negocio\\imagendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\imagendb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|c:\\users\\luka\\documents\\github\\tp-web-equipo-h\\tpwinform-equipo-h\\tpwinform-equipo-h\\detallesarticulo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\tpwinform-equipo-h\\detallesarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|solutionrelative:tpwinform-equipo-h\\detallesarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\tpwinform-equipo-h\\detallesarticulo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|solutionrelative:tpwinform-equipo-h\\detallesarticulo.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|c:\\users\\luka\\documents\\github\\tp-web-equipo-h\\tpwinform-equipo-h\\tpwinform-equipo-h\\detallesarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{82C19C87-DE26-48BE-823F-414E6144342B}|TPWinForm-equipo-h\\TPWinForm-equipo-h.csproj|solutionrelative:tpwinform-equipo-h\\detallesarticulo.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|c:\\users\\luka\\documents\\github\\tp-web-equipo-h\\tpwinform-equipo-h\\negocio\\articulodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85E54BFC-B32C-4F19-8A73-311691DACFDF}|Negocio\\Negocio.csproj|solutionrelative:negocio\\articulodb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,43 +26,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ArticuloDB.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\Negocio\\ArticuloDB.cs",
               "RelativeDocumentMoniker": "Negocio\\ArticuloDB.cs",
               "ToolTip": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\Negocio\\ArticuloDB.cs",
               "RelativeToolTip": "Negocio\\ArticuloDB.cs",
-              "ViewState": "AQIAANsAAAAAAAAAAAAYwBgBAAAdAAAA",
+              "ViewState": "AQIAAA0BAAAAAAAAAAAkwBgBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T04:14:51.165Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ImagenDB.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\Negocio\\ImagenDB.cs",
               "RelativeDocumentMoniker": "Negocio\\ImagenDB.cs",
               "ToolTip": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\Negocio\\ImagenDB.cs",
               "RelativeToolTip": "Negocio\\ImagenDB.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAkwHMAAAAAAAAA",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAYwDwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T04:04:54.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DetallesArticulo.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\TPWinForm-equipo-h\\DetallesArticulo.aspx.cs",
               "RelativeDocumentMoniker": "TPWinForm-equipo-h\\DetallesArticulo.aspx.cs",
               "ToolTip": "C:\\Users\\Luka\\Documents\\GitHub\\tp-web-equipo-H\\TPWinForm-equipo-h\\TPWinForm-equipo-h\\DetallesArticulo.aspx.cs",
               "RelativeToolTip": "TPWinForm-equipo-h\\DetallesArticulo.aspx.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowDQAAABJAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowDQAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-27T04:04:22.943Z",
               "EditorCaption": ""

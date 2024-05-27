@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,6 +53,9 @@ namespace Negocio
                 lector = comando.ExecuteReader();
 
                 Imagen imagen = new Imagen();
+
+                
+
                 while (lector.Read())
                 {
                     imagen.id = lector.GetInt32(0);
@@ -59,12 +63,22 @@ namespace Negocio
 
                     if (!lector.IsDBNull(lector.GetOrdinal("ImagenUrl")))
                     {
-                        imagen.url = lector.GetString(lector.GetOrdinal("ImagenUrl"));
+                        string url = lector.GetString(lector.GetOrdinal("ImagenUrl"));
+                        if (UrlExiste(url))
+                        {
+                     
+                            imagen.url = url;
+                        }
+                        else
+                        {
+                            imagen.url = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
+                        }
                     }
                     else
                     {
                         imagen.url = "https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg";
                     }
+                    
                 }
 
 
@@ -109,7 +123,15 @@ namespace Negocio
                                 {
 
                                    string urlImagen = lector.GetString(0);
-                                    urlsImagenes.Add(urlImagen);
+                                   if(UrlExiste(urlImagen))
+                                    {
+                                        urlsImagenes.Insert(0,urlImagen);
+
+                                    }
+                                    else
+                                    {
+                                        urlsImagenes.Add("https://static.vecteezy.com/system/resources/previews/004/141/669/non_2x/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+                                    }
                                 }
                                 else
                                 {
@@ -128,6 +150,31 @@ namespace Negocio
             }
 
             return urlsImagenes;
+        }
+
+        //Funcion que verifica el estado del url de la imagen a traves de un request por protocolo https
+        private bool UrlExiste(string url)
+        {
+            try
+            {
+                Uri uri = new Uri(url);
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                request.Method = "HEAD";
+
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                {
+                    return response.StatusCode == HttpStatusCode.OK;
+                }
+            }
+            catch (UriFormatException)
+            {
+                return false;
+            }
+            catch (WebException)
+            {
+                return false;
+            }
         }
 
 
